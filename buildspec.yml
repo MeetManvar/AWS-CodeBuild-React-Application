@@ -1,6 +1,11 @@
 version: 0.2
 
 phases:
+
+  install:
+    runtime-versions:
+      node: 14
+
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
@@ -10,11 +15,11 @@ phases:
     commands:
       - echo Build started on `date`
       - npm run build
-
-  post_build:
-    commands:
-      - echo Coping to S3
-      - aws s3 cp --recursive ./build s3://${DeployBucket}/ 
+      
+  # post_build:
+  #   commands:
+  #     - echo Coping to S3
+  #     - aws s3 cp --recursive  ./build s3://${DeployBucket}/ 
       
 artifacts:
    files:
