@@ -19,7 +19,7 @@ phases:
   post_build:
     commands:
       - echo Coping to S3
-      - aws s3 cp --recursive  ./build s3://codebuilds2908/ 
+      - aws s3 cp --recursive  ./build s3://meet-manvar/ 
       
 artifacts:
    files:
