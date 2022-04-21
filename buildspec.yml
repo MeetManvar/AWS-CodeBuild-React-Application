@@ -15,11 +15,7 @@ phases:
     commands:
       - echo Build started on `date`
       - npm run build
-      
-#   post_build:
-#     commands:
-#       - echo Coping to S3
-#       - aws s3 cp --recursive  ./build s3://meet-manvar/ 
+ 
 artifacts:
    files:
      - 'build/*'
